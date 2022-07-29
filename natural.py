@@ -3,12 +3,13 @@ from flask import Flask, request, render_template, redirect, url_for
 app = Flask(__name__)
 
 keywords = {"False", "await", "else", "import", "pass", "None", "break", "except", "raise", "True", "class", "finally", "is", "return", "and", "continue",
-            "for", "lambda", "try", "as", "def", "from", "global", "not", "with", "async", "elif", "if", "or", "yield", "nonlocal", "del", "assert", "while", }
+            "for", "lambda", "try", "as", "def", "from", "global", "not", "with", "async", "elif", "if", "or", "yield", "nonlocal", "del", "assert", "while", "print", "range"}
 
 operators = {"+", "-", "*", "/", "%", "**", "//", "=", "+=", "-=", "*=", "/=", "/=", "%=", "//=", "**=", "&=", "|=", "^=", ">>=",
-             "<<=", "==", "!=", ">", "<", ">=", "<=", "and", "or", "not", "is", "is not", "not in", "&", "|", "^", "~", "<<", ">>"}
+             "<<=", "==", "!=", ">", "<", ">=", "<=", "and", "or", "not", "is", "is", "not", "not", "in", "&", "|", "^", "~", "<<", ">>"}
 
-delimiters = {'(', ')', '{', '}', '[', ']', '"', "'", ';', '#', ',', ''}
+delimiters = {'(', ')', '{', '}', '[', ']',
+              '"', "'", ';', '#', ',', ':', '"', ','}
 
 
 def detect_keywords(text):
@@ -58,7 +59,7 @@ def detect_identifiers(text):
             if word not in arr:
                 if word not in not_ident:
                     arr.append(word)
-    return arr
+    return str(arr).lstrip("[").replace("'", "").rstrip(']')
 
 
 @app.route('/')
@@ -69,8 +70,8 @@ def my_form():
 @app.route('/', methods=['POST'])
 def my_form_post():
     text = request.form['analisis']
-    text_split = text.split()
-    return render_template('form.html', variable=text, keyword=detect_keywords(text_split), operator=detect_operators(text_split), delimiter=detect_delimiters(text_split), identifiers=detect_identifiers(text_split), number=detect_num(text_split))
+    text_split = text
+    return render_template('form.html', variable=text, keyword=str(detect_keywords(text_split.split())).lstrip("[").replace("'", "").rstrip(']'), operator=str(detect_operators(text_split.split())).lstrip("[").replace("'", "").rstrip(']'), delimiter=str(detect_delimiters(text_split)).lstrip("[").replace("'", "").rstrip(']'), identifiers=detect_identifiers(text_split.split()), number=str(detect_num(text_split.split())).lstrip("[").replace("'", "").rstrip(']'))
 
 
 @app.errorhandler(404)
