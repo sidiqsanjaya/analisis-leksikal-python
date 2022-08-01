@@ -17,3 +17,10 @@ Resa Endrawan 10119152
 Didiek Ramadhan Atmawijaya 10119154
 
 Sidiq Sanjaya Bakti 10119167
+
+command
+
+```
+python3 natural.py
+then open with browser 127.0.0.1:5000
+```
