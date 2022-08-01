@@ -20,3 +20,9 @@ Sidiq Sanjaya Bakti 10119167
 python3 natural.py
 then open with browser 127.0.0.1:5000
 ```
+
+OR
+
+```
+using this [WEB](https://leksikal.younime.my.id/). if the link is not dead.
+```
