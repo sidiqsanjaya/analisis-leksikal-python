@@ -73,7 +73,6 @@ def my_form_post():
     if(not text):
         with open('contoh.txt', encoding="utf8") as t:
             text_split = t.read()
-            print(text_split)
     else:
         text_split = text
     return render_template('form.html', variable=text_split, keyword=str(detect_keywords(text_split.split())).lstrip("[").replace("'", "").rstrip(']'), operator=str(detect_operators(text_split.split())).lstrip("[").replace("'", "").rstrip(']'), delimiter=str(detect_delimiters(text_split)).lstrip("[").replace("'", "").rstrip(']'), identifiers=detect_identifiers(text_split.split()), number=str(detect_num(text_split.split())).lstrip("[").replace("'", "").rstrip(']'))
