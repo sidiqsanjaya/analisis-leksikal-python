@@ -22,7 +22,4 @@ then open with browser 127.0.0.1:5000
 ```
 
 OR
-
-```
-using this [WEB](https://leksikal.younime.my.id/). if the link is not dead.
-```
+By using this [WEB](https://leksikal.younime.my.id/). if the link is not dead.
