@@ -18,7 +18,7 @@ Didiek Ramadhan Atmawijaya 10119154
 
 Sidiq Sanjaya Bakti 10119167
 
-## command
+## how to run
 
 ```
 python3 natural.py
