@@ -1,6 +1,4 @@
-# analisis-leksikal-python
-
-A lexical analyzer for Java source code written in Python
+# A lexical analyzer for Python source code written in Python
 
 program ini dibuat untuk memenuhi tugas besar matakuliah teknik komplikasi.
 
