@@ -19,3 +19,4 @@ else :
 
     print ( "Jumlah-Mahasiswa-Yang-Lulus:" , lulus )
     print ( "Jumlah-Mahasiswa-Yang-tidak-Lulus:" , (10)-lulus )
+    
